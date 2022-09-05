@@ -14,6 +14,7 @@ plink --bfile bin_snp_miss_rem --mind 0.2 --make-bed -out bin_no_missing
 
 4. Checking for Sex Discrepancy
 plink --bfile binaryfile --check-sex
+#discovered sex discrepancy corrected
 plink --bfile binaryfile --impute-sex --make-bed --out newbinaryfile
 
 5. Minor Allele Frequency
@@ -24,4 +25,14 @@ plink --bfile newbinaryfile --maf 0.01 --nonfounders --allow-no-sex --make-bed -
 
 6. Checking for Cryptic Relatedness
 #pruning of data to select only non-correlated SNP markers
+plink --bfile lesMAFbfile --indep-pairwise 50 5 0.2 --allow-no-sex --make-founders --out indepSNP
+#checking for relationships between individuals with a pihat >0.2
+plink --bfile lesMAFbfile --allow-no-sex --make-founders --extract indepSNP.prune.in --genome --min 0.2 --out pihat_min0.2
+#Sample removal unnecessary
+
+Generation of covariate file for Population Stratification
+plink --bfile lesMAFbfile --pca 10 --out pca_10 --allow-no-sex
+#generated eigenvec file into covariate file using rscript
+
+#Rest of the codes in Linux using GEMMA software toolkit
 
