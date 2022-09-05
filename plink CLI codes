@@ -1,0 +1,10 @@
+Quality control using plink
+
+1. Generation of binary files from the given data.ped and data.map file:
+plink --file data --allow-no-sex --out binaryfile
+
+2. Checking missingness per individual and per SNP
+plink --bfile binaryfile --allow-no-sex --missing
+
+3. Deleting SNPs with high levels of missingness
+plink --bfile
