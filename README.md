@@ -1,6 +1,6 @@
 # Biohackathon-Team-Amyloid-beta-GWAS
 
-plink was used in Command prompt to do most of the Quality Control and the generation of covariate file for PCA.
+plink was used in Command prompt to do most of the Quality Control of the given .map and .ped file, and the generation of covariate file for PCA.
 
 gemma was deployed in Windows Subsystem for Linux to generate the Kinship matrix and to construct the General Linear Model (GLM) and Mixed Linear Model (MLM). These models were then used to construct the QQ plots and Manhattan plots in Rstudio, which is an important part of Quality Constrol in Genome-wide Association Studies (GWAS)
 
