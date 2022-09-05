@@ -1,4 +1,4 @@
-Quality control using plink
+Quality control using plink (Command Prompt)
 
 1. Generation of binary files from the given data.ped and data.map file:
 plink --file data --allow-no-sex --out binaryfile
@@ -7,4 +7,21 @@ plink --file data --allow-no-sex --out binaryfile
 plink --bfile binaryfile --allow-no-sex --missing
 
 3. Deleting SNPs with high levels of missingness
-plink --bfile
+# deleting SNPs with missingness >0.2
+plink --bfile binaryfile --geno 0.2 --make-bed --out bin_snp_miss_rem
+# deleting individuals with missingness >0.2
+plink --bfile bin_snp_miss_rem --mind 0.2 --make-bed -out bin_no_missing
+
+4. Checking for Sex Discrepancy
+plink --bfile binaryfile --check-sex
+plink --bfile binaryfile --impute-sex --make-bed --out newbinaryfile
+
+5. Minor Allele Frequency
+#finding MAF of all SNPs
+plink --bfile newbinaryfile --freq --allow-no-sex --nonfounders --out MAF
+#removing all SNPs withMAF below 1% (0.01)
+plink --bfile newbinaryfile --maf 0.01 --nonfounders --allow-no-sex --make-bed --out lesMAFbfile
+
+6. Checking for Cryptic Relatedness
+#pruning of data to select only non-correlated SNP markers
+
