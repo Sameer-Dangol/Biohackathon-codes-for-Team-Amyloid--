@@ -1,4 +1,4 @@
-# Biohackathon-codes-for-Team-Amyloid-beta
+# Biohackathon-Team-Amyloid-beta-GWAS
 
 The plots file contains the plots made using Rstudio, which include histograms and the QQ plots and Manhattan plots for the different linear models deployed.
 
