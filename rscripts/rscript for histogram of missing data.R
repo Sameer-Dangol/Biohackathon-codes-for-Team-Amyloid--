@@ -7,8 +7,8 @@ snpmiss <- read.table(file="plink.lmiss", header=TRUE)
 #indicates jpeg format and gives title to file
 jpeg("histimiss.jpeg") 
 # selects column 6, names header of file
-hist(indmiss[,6],main = "histogram individual missingness")
+hist(indmiss[,6],main = "histogram individual missingness", , xlab = "Fraction of missing data")
 
 jpeg("histlmiss.jpeg") 
-hist(snpmiss[,5],main = "histogram SNP missingness") 
+hist(snpmiss[,5],main = "histogram SNP missingness", , xlab = "Fraction of missing data") 
 dev.off()
