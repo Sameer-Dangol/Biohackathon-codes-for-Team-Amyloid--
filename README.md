@@ -8,4 +8,4 @@ The rscripts file contains the R scripts used to construct histograms, convert e
 
 The plots file contains the plots made using Rstudio, which include histograms and the QQ plots and Manhattan plots for the different linear models deployed.
 
-Note: The data files and other analysis files yet to be uploaded via Github LFS.
+Note: The data files and other analysis files are larger than 100 Mb and yet to be uploaded via Github LFS.
